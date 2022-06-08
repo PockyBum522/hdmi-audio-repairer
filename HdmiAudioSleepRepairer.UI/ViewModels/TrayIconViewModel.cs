@@ -6,6 +6,7 @@ using System.Windows;
 using System.Windows.Input;
 using HdmiAudioSleepRepairer.Core;
 using HdmiAudioSleepRepairer.Core.Interfaces;
+using HdmiAudioSleepRepairer.Core.Logic;
 using HdmiAudioSleepRepairer.Core.WindowsHelpers;
 using HdmiAudioSleepRepairer.UI.Commands;
 using HdmiAudioSleepRepairer.UI.Interfaces;
@@ -26,6 +27,8 @@ public class TrayIconViewModel : BaseViewModel, ITrayIconViewModel
     {
         _logger = logger;
         
+        _logger.Information("Initializing Tray Icon View");
+        
         _settingsAppLocal = settingsAppLocal;
 
         _settingsWindow = new SettingsWindow();
@@ -33,6 +36,8 @@ public class TrayIconViewModel : BaseViewModel, ITrayIconViewModel
         _settingsWindow.DataContext = settingsViewModel;
         
         _settingsWindow.Hide();
+        
+        _logger.Information("Hid settings window, tray icon init finished");
     }
     
     public ICommand CommandExitApplication => new SimpleCommand(() => Environment.Exit(0));
@@ -41,14 +46,29 @@ public class TrayIconViewModel : BaseViewModel, ITrayIconViewModel
     public ICommand CommandEnableDevice => new SimpleCommand(EnableDevice);
     public ICommand CommandDisableDevice => new SimpleCommand(DisableDevice);
 
+    private string _deviceCategoryGuid => @"{c166523c-fe0c-4a94-a586-f1a80cfbbf3e}";
+    private string _instancePath => @"SWD\MMDEVAPI\{0.0.0.00000000}.{1D45FBAB-22DF-4162-BA75-2F1603711442}";
+    
     private void EnableDevice()
     {
-        throw new NotImplementedException();
+        var deviceCategoryGuid = new Guid(_deviceCategoryGuid);
+
+        var instancePath = _instancePath;
+
+        DeviceHelper.SetDeviceEnabled(deviceCategoryGuid, instancePath, true);
+        
+        _logger.Information("Enable device finished");
     }
     
     private void DisableDevice()
     {
-        throw new NotImplementedException();
+        var deviceCategoryGuid = new Guid(_deviceCategoryGuid);
+        
+        var instancePath = _instancePath;
+        
+        DeviceHelper.SetDeviceEnabled(deviceCategoryGuid, instancePath, false);
+        
+        _logger.Information("Disable device finished");
     }
     
     private void RunLogfileInVscode()
