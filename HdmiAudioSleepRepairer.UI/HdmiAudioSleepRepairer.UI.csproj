@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0-windows</TargetFramework>
+        <UseWPF>true</UseWPF>
+        <Configurations>Debug;Release;Local Debug Test</Configurations>
+        <Platforms>x64</Platforms>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.1.0" />
+      <PackageReference Include="JetBrains.Annotations" Version="2021.3.0" />
+      <PackageReference Include="Ookii.Dialogs.Wpf" Version="5.0.1" />
+      <PackageReference Include="Serilog.Sinks.Debug" Version="2.0.0" />
+      <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+      <PackageReference Include="System.Windows.Extensions" Version="6.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\HdmiAudioSleepRepairer.Core\HdmiAudioSleepRepairer.Core.csproj" />
+    </ItemGroup>
+
+</Project>

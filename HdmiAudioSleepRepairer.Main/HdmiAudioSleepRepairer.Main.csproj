@@ -1,0 +1,105 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net6.0-windows</TargetFramework>
+        <UseWPF>true</UseWPF>
+        <Configurations>Debug;Release;Test Locally;Local Debug Output;Debug Network Sandbox</Configurations>
+        <PackageId>HdmiAudioSleepRepairer</PackageId>
+        <Platforms>x64</Platforms>
+        <ApplicationIcon>Resources/Icons/AppIcon.ico</ApplicationIcon>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+        <PlatformTarget>x64</PlatformTarget>
+        <OutputPath>bin\</OutputPath>
+    </PropertyGroup>
+    
+    <PropertyGroup Condition=" '$(Configuration)' == 'Local Debug Output' ">
+        <PlatformTarget>x64</PlatformTarget>
+        <OutputPath>bin/</OutputPath>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Autofac" Version="6.2.0" />
+      <PackageReference Include="Config.Net" Version="4.19.0" />
+      <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.1.0" />
+      <PackageReference Include="JetBrains.Annotations" Version="2021.3.0" />
+      <PackageReference Include="Serilog" Version="2.11.0-dev-01371" />
+      <PackageReference Include="Serilog.Sinks.Async" Version="1.5.0" />
+      <PackageReference Include="Serilog.Sinks.Debug" Version="2.0.0" />
+      <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+      <PackageReference Include="System.Windows.Extensions" Version="6.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Resources\Icons\AppIcon.psd" />
+      <None Remove=".gitignore" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="Resources\Icons\AppIcon.ico">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Include="Resources\Icons\TrayIcon.ico">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\HdmiAudioSleepRepairer.Core\HdmiAudioSleepRepairer.Core.csproj" />
+      <ProjectReference Include="..\HdmiAudioSleepRepairer.UI\HdmiAudioSleepRepairer.UI.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Page Update="Resources\Themes\SelenMetroDark\ButtonStyles.xaml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Page>
+      <Page Update="Resources\Themes\SelenMetroDark\CheckBoxStyles.xaml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Page>
+      <Page Update="Resources\Themes\SelenMetroDark\ComboBoxStyles.xaml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Page>
+      <Page Update="Resources\Themes\SelenMetroDark\ControlStyles.xaml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Page>
+      <Page Update="Resources\Themes\SelenMetroDark\DataGridStyles.xaml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Page>
+      <Page Update="Resources\Themes\SelenMetroDark\GroupBoxStyles.xaml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Page>
+      <Page Update="Resources\Themes\SelenMetroDark\ListBoxStyles.xaml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Page>
+      <Page Update="Resources\Themes\SelenMetroDark\MenuStyles.xaml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Page>
+      <Page Update="Resources\Themes\SelenMetroDark\PageStyles.xaml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Page>
+      <Page Update="Resources\Themes\SelenMetroDark\RadioButtonStyles.xaml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Page>
+      <Page Update="Resources\Themes\SelenMetroDark\Resources.xaml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Page>
+      <Page Update="Resources\Themes\SelenMetroDark\ScrollBarStyles.xaml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Page>
+      <Page Update="Resources\Themes\SelenMetroDark\Styles.xaml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Page>
+      <Page Update="Resources\Themes\SelenMetroDark\TabControlStyles.xaml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Page>
+      <Page Update="Resources\Themes\SelenMetroDark\TextBoxStyles.xaml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Page>
+      <Page Update="Resources\Themes\SelenMetroDark\WindowStyles.xaml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Page>
+    </ItemGroup>
+</Project>

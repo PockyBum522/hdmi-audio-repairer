@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HdmiAudioSleepRepairer.Core", "HdmiAudioSleepRepairer.Core\HdmiAudioSleepRepairer.Core.csproj", "{812EE6E5-7A2A-4995-82E6-269631ABE6DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HdmiAudioSleepRepairer.Main", "HdmiAudioSleepRepairer.Main\HdmiAudioSleepRepairer.Main.csproj", "{7BB241E8-F2AA-4FF6-B131-DD5BBAD9254A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HdmiAudioSleepRepairer.UI", "HdmiAudioSleepRepairer.UI\HdmiAudioSleepRepairer.UI.csproj", "{84EC3624-7F9B-4A01-98C2-2ED4C600688D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Local Debug Output|Any CPU = Local Debug Output|Any CPU
+		Debug Network Sandbox|Any CPU = Debug Network Sandbox|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{812EE6E5-7A2A-4995-82E6-269631ABE6DD}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{812EE6E5-7A2A-4995-82E6-269631ABE6DD}.Debug|Any CPU.Build.0 = Debug|x64
+		{812EE6E5-7A2A-4995-82E6-269631ABE6DD}.Release|Any CPU.ActiveCfg = Release|x64
+		{812EE6E5-7A2A-4995-82E6-269631ABE6DD}.Release|Any CPU.Build.0 = Release|x64
+		{812EE6E5-7A2A-4995-82E6-269631ABE6DD}.Local Debug Output|Any CPU.ActiveCfg = Debug|x64
+		{812EE6E5-7A2A-4995-82E6-269631ABE6DD}.Local Debug Output|Any CPU.Build.0 = Debug|x64
+		{812EE6E5-7A2A-4995-82E6-269631ABE6DD}.Debug Network Sandbox|Any CPU.ActiveCfg = Debug|x64
+		{812EE6E5-7A2A-4995-82E6-269631ABE6DD}.Debug Network Sandbox|Any CPU.Build.0 = Debug|x64
+		{7BB241E8-F2AA-4FF6-B131-DD5BBAD9254A}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{7BB241E8-F2AA-4FF6-B131-DD5BBAD9254A}.Debug|Any CPU.Build.0 = Debug|x64
+		{7BB241E8-F2AA-4FF6-B131-DD5BBAD9254A}.Release|Any CPU.ActiveCfg = Release|x64
+		{7BB241E8-F2AA-4FF6-B131-DD5BBAD9254A}.Release|Any CPU.Build.0 = Release|x64
+		{7BB241E8-F2AA-4FF6-B131-DD5BBAD9254A}.Local Debug Output|Any CPU.ActiveCfg = Local Debug Output|x64
+		{7BB241E8-F2AA-4FF6-B131-DD5BBAD9254A}.Local Debug Output|Any CPU.Build.0 = Local Debug Output|x64
+		{7BB241E8-F2AA-4FF6-B131-DD5BBAD9254A}.Debug Network Sandbox|Any CPU.ActiveCfg = Debug Network Sandbox|x64
+		{7BB241E8-F2AA-4FF6-B131-DD5BBAD9254A}.Debug Network Sandbox|Any CPU.Build.0 = Debug Network Sandbox|x64
+		{84EC3624-7F9B-4A01-98C2-2ED4C600688D}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{84EC3624-7F9B-4A01-98C2-2ED4C600688D}.Debug|Any CPU.Build.0 = Debug|x64
+		{84EC3624-7F9B-4A01-98C2-2ED4C600688D}.Release|Any CPU.ActiveCfg = Release|x64
+		{84EC3624-7F9B-4A01-98C2-2ED4C600688D}.Release|Any CPU.Build.0 = Release|x64
+		{84EC3624-7F9B-4A01-98C2-2ED4C600688D}.Local Debug Output|Any CPU.ActiveCfg = Debug|x64
+		{84EC3624-7F9B-4A01-98C2-2ED4C600688D}.Local Debug Output|Any CPU.Build.0 = Debug|x64
+		{84EC3624-7F9B-4A01-98C2-2ED4C600688D}.Debug Network Sandbox|Any CPU.ActiveCfg = Debug|x64
+		{84EC3624-7F9B-4A01-98C2-2ED4C600688D}.Debug Network Sandbox|Any CPU.Build.0 = Debug|x64
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{812EE6E5-7A2A-4995-82E6-269631ABE6DD} = {6582A496-93C0-434B-94DF-1AF822E1B15E}
+		{7BB241E8-F2AA-4FF6-B131-DD5BBAD9254A} = {6582A496-93C0-434B-94DF-1AF822E1B15E}
+		{84EC3624-7F9B-4A01-98C2-2ED4C600688D} = {6582A496-93C0-434B-94DF-1AF822E1B15E}
+	EndGlobalSection
+EndGlobal
