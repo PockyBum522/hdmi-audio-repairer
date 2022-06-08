@@ -196,7 +196,7 @@ ref DeviceInfoData deviceInfoData);
     [DllImport(setupapi, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, SetLastError = true)]
     public static extern SafeDeviceInfoSetHandle SetupDiGetClassDevs([In()]
 ref Guid classGuid, [MarshalAs(UnmanagedType.LPWStr)]
-string enumerator, IntPtr hwndParent, SetupDiGetClassDevsFlags flags);
+string? enumerator, IntPtr hwndParent, SetupDiGetClassDevsFlags flags);
 
     /*
     [DllImport(setupapi, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, SetLastError = true)]
@@ -217,7 +217,7 @@ ref int requiredSize);
     );
 
     [SuppressUnmanagedCodeSecurity()]
-    [ReliabilityContract(Consistency.WillNotCorruptState, Cer.Success)]
+    //[ReliabilityContract(Consistency.WillNotCorruptState, Cer.Success)]
     [DllImport(setupapi, CallingConvention = CallingConvention.Winapi, SetLastError = true)]
     [return: MarshalAs(UnmanagedType.Bool)]
     public static extern bool SetupDiDestroyDeviceInfoList(IntPtr deviceInfoSet);
@@ -261,7 +261,8 @@ public sealed class DeviceHelper
     /// <remarks>Will throw an exception if the device is not Disableable.</remarks>
     public static void SetDeviceEnabled(Guid classGuid, string instanceId, bool enable)
     {
-        SafeDeviceInfoSetHandle diSetHandle = null;
+        SafeDeviceInfoSetHandle? diSetHandle = null;
+        
         try
         {
             // Get the handle to a device information set for all devices matching classGuid that are present on the 
