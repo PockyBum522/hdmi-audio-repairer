@@ -54,7 +54,7 @@ public class TrayIconViewModel : BaseViewModel, ITrayIconViewModel
 
         DeviceHelper.SetDeviceEnabled(deviceCategoryGuid, instancePath, true);
         
-        _logger.Information("Enable device at path: {DevicePath} finished",
+        _logger.Information("Enabled device at path: {DevicePath}",
             _settingsAppLocal.DeviceInstancePath);
     }
     
@@ -66,7 +66,7 @@ public class TrayIconViewModel : BaseViewModel, ITrayIconViewModel
         
         DeviceHelper.SetDeviceEnabled(deviceCategoryGuid, instancePath, false);
         
-        _logger.Information("Enable device at path: {DevicePath} finished",
+        _logger.Information("Disabled device at path: {DevicePath}",
             _settingsAppLocal.DeviceInstancePath);
     }
     

@@ -27,13 +27,8 @@ public class SettingsViewModel : BaseViewModel
     public SettingsViewModel(ISettingsApplicationLocal settingsAppLocal)
     {
         _settingsAppLocal = settingsAppLocal;
-
         
-        if (DateTime.Now.Year == 2023)
-            throw new NotImplementedException("You should really fix the " +
-                                              "stuff that is commented out below.");
-        
-        //InitializeFromConfig();
+        InitializeFromConfig();
     }
 
     private void SaveAndHideSettingsWindow(object settingsWindowObject)
@@ -64,13 +59,8 @@ public class SettingsViewModel : BaseViewModel
         if (!string.IsNullOrEmpty(DeviceInstancePath)) return;
         
         // Otherwise:
-
-        if (DateTime.Now.Year == 2023)
-            throw new NotImplementedException("You should really fix the " +
-                                              "stuff that is commented out below.");
-
-        // MessageBox.Show(
-        //     "Device Class GUID and/or Device Instance Path not initialized. " +
-        //     "Please edit settings by right clicking on the tray icon and set these before using");
+        MessageBox.Show(
+            "Device Class GUID and/or Device Instance Path not initialized. " +
+            "Please edit settings by right clicking on the tray icon and set these before using");
     }
 }
