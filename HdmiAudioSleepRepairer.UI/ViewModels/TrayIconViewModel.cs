@@ -46,6 +46,18 @@ public class TrayIconViewModel : BaseViewModel, ITrayIconViewModel
     public ICommand CommandEnableDevice => new SimpleCommand(EnableDevice);
     public ICommand CommandDisableDevice => new SimpleCommand(DisableDevice);
     
+    // ReSharper disable once AsyncVoidLambda because resharper doesn't know what it's talking about
+    public ICommand CommandRestartDevice => new SimpleCommand(async () => await RestartDevice());
+
+    private async Task RestartDevice()
+    {
+        DisableDevice();
+        
+        await Task.Delay(5000);
+        
+        EnableDevice();
+    }
+
     private void EnableDevice()
     {
         var deviceCategoryGuid = new Guid(_settingsAppLocal.DeviceClassGuid);
