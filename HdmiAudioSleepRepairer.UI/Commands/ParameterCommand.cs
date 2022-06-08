@@ -20,11 +20,9 @@ namespace HdmiAudioSleepRepairer.UI.Commands
 
         public void Execute(object? parameter)
         {
-            if (parameter is not null)
-                _exec.Invoke(parameter);
+            _exec.Invoke(parameter!);
         }
-        
-        
+
         public event EventHandler? CanExecuteChanged { add{} remove{} }
     }
 }
