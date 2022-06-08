@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Windows;
 using System.Windows.Input;
 using HdmiAudioSleepRepairer.Core.Interfaces;
@@ -27,7 +28,12 @@ public class SettingsViewModel : BaseViewModel
     {
         _settingsAppLocal = settingsAppLocal;
 
-        InitializeFromConfig();
+        
+        if (DateTime.Now.Year == 2023)
+            throw new NotImplementedException("You should really fix the " +
+                                              "stuff that is commented out below.");
+        
+        //InitializeFromConfig();
     }
 
     private void SaveAndHideSettingsWindow(object settingsWindowObject)
@@ -58,8 +64,13 @@ public class SettingsViewModel : BaseViewModel
         if (!string.IsNullOrEmpty(DeviceInstancePath)) return;
         
         // Otherwise:
-        MessageBox.Show(
-            "Device Class GUID and/or Device Instance Path not initialized. " +
-            "Please edit settings by right clicking on the tray icon and set these before using");
+
+        if (DateTime.Now.Year == 2023)
+            throw new NotImplementedException("You should really fix the " +
+                                              "stuff that is commented out below.");
+
+        // MessageBox.Show(
+        //     "Device Class GUID and/or Device Instance Path not initialized. " +
+        //     "Please edit settings by right clicking on the tray icon and set these before using");
     }
 }
