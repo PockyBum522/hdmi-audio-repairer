@@ -45,30 +45,29 @@ public class TrayIconViewModel : BaseViewModel, ITrayIconViewModel
     public ICommand CommandOpenLogFile => new SimpleCommand(RunLogfileInVscode);
     public ICommand CommandEnableDevice => new SimpleCommand(EnableDevice);
     public ICommand CommandDisableDevice => new SimpleCommand(DisableDevice);
-
-    private string _deviceCategoryGuid => @"{c166523c-fe0c-4a94-a586-f1a80cfbbf3e}";
-    private string _instancePath => @"SWD\MMDEVAPI\{0.0.0.00000000}.{1D45FBAB-22DF-4162-BA75-2F1603711442}";
     
     private void EnableDevice()
     {
-        var deviceCategoryGuid = new Guid(_deviceCategoryGuid);
+        var deviceCategoryGuid = new Guid(_settingsAppLocal.DeviceClassGuid);
 
-        var instancePath = _instancePath;
+        var instancePath = _settingsAppLocal.DeviceInstancePath;
 
         DeviceHelper.SetDeviceEnabled(deviceCategoryGuid, instancePath, true);
         
-        _logger.Information("Enable device finished");
+        _logger.Information("Enable device at path: {DevicePath} finished",
+            _settingsAppLocal.DeviceInstancePath);
     }
     
     private void DisableDevice()
     {
-        var deviceCategoryGuid = new Guid(_deviceCategoryGuid);
+        var deviceCategoryGuid = new Guid(_settingsAppLocal.DeviceClassGuid);
         
-        var instancePath = _instancePath;
+        var instancePath = _settingsAppLocal.DeviceInstancePath;
         
         DeviceHelper.SetDeviceEnabled(deviceCategoryGuid, instancePath, false);
         
-        _logger.Information("Disable device finished");
+        _logger.Information("Enable device at path: {DevicePath} finished",
+            _settingsAppLocal.DeviceInstancePath);
     }
     
     private void RunLogfileInVscode()
