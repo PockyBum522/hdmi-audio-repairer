@@ -43,8 +43,8 @@ public class DIContainerBuilder
 
         _logger = new LoggerConfiguration()
             .Enrich.WithProperty("Application", "SerilogTestContext")
-            //.MinimumLevel.Information()
-            .MinimumLevel.Debug()
+            .MinimumLevel.Information()
+            //.MinimumLevel.Debug()
             .WriteTo.File(ApplicationPaths.LogPath, rollingInterval: RollingInterval.Day)
             .WriteTo.Debug()
             .CreateLogger();
@@ -67,6 +67,7 @@ public class DIContainerBuilder
     private void RegisterUIDependencies()
     {
         _builder.RegisterType<SettingsViewModel>().AsSelf().SingleInstance();
+        _builder.RegisterType<SettingsWindow>().AsSelf().SingleInstance();
         
         _builder.RegisterType<TrayIconViewModel>().As<ITrayIconViewModel>().SingleInstance();
         _builder.RegisterType<TrayIconMain>().As<ITrayIcon>().SingleInstance();
