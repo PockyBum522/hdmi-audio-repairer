@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using JetBrains.Annotations;
 
-namespace HdmiAudioSleepRepairer.UI.ViewModels.ViewModelHelpers
+namespace HdmiAudioSleepRepairer.UI.ViewDependencies.ViewModelHelpers
 {
     /// <summary>
     /// All view models should inherit from this, helps with MVVM

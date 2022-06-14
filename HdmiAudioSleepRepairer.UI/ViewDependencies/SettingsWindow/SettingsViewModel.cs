@@ -1,14 +1,11 @@
-﻿using System;
-using System.IO;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Input;
 using HdmiAudioSleepRepairer.Core.Interfaces;
-using HdmiAudioSleepRepairer.UI.Commands;
-using HdmiAudioSleepRepairer.UI.ViewModels.ViewModelHelpers;
+using HdmiAudioSleepRepairer.UI.ViewDependencies.ViewModelHelpers;
+using HdmiAudioSleepRepairer.UI.ViewDependencies.ViewModelHelpers.Commands;
 using JetBrains.Annotations;
-using Ookii.Dialogs.Wpf;
 
-namespace HdmiAudioSleepRepairer.UI.ViewModels;
+namespace HdmiAudioSleepRepairer.UI.ViewDependencies.SettingsWindow;
 
 /// <summary>
 /// ViewModel for settings window

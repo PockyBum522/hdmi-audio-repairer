@@ -2,7 +2,7 @@
 using System.Windows.Input;
 using JetBrains.Annotations;
 
-namespace HdmiAudioSleepRepairer.UI.Commands;
+namespace HdmiAudioSleepRepairer.UI.ViewDependencies.ViewModelHelpers.Commands;
 
 /// <summary>
 /// Command that does not take any parameter from the UI

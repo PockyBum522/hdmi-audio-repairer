@@ -8,13 +8,13 @@ using HdmiAudioSleepRepairer.Core;
 using HdmiAudioSleepRepairer.Core.Interfaces;
 using HdmiAudioSleepRepairer.Core.Logic;
 using HdmiAudioSleepRepairer.Core.WindowsHelpers;
-using HdmiAudioSleepRepairer.UI.Commands;
 using HdmiAudioSleepRepairer.UI.Interfaces;
-using HdmiAudioSleepRepairer.UI.ViewModels.ViewModelHelpers;
-using HdmiAudioSleepRepairer.UI.Views;
+using HdmiAudioSleepRepairer.UI.ViewDependencies.SettingsWindow;
+using HdmiAudioSleepRepairer.UI.ViewDependencies.ViewModelHelpers;
+using HdmiAudioSleepRepairer.UI.ViewDependencies.ViewModelHelpers.Commands;
 using Serilog;
 
-namespace HdmiAudioSleepRepairer.UI.ViewModels;
+namespace HdmiAudioSleepRepairer.UI.ViewDependencies.TrayIcon;
 
 /// <summary>
 /// ViewModel for Tray Icon
@@ -24,7 +24,7 @@ public class TrayIconViewModel : BaseViewModel, ITrayIconViewModel
     private readonly ILogger _logger;
     private readonly ISettingsApplicationLocal _settingsAppLocal;
     
-    private readonly SettingsWindow _settingsWindow;
+    private readonly SettingsWindow.SettingsWindow _settingsWindow;
     
     /// <summary>
     /// Constructor for dependency injection
@@ -40,7 +40,7 @@ public class TrayIconViewModel : BaseViewModel, ITrayIconViewModel
         
         _settingsAppLocal = settingsAppLocal;
 
-        _settingsWindow = new SettingsWindow();
+        _settingsWindow = new SettingsWindow.SettingsWindow();
 
         _settingsWindow.DataContext = settingsViewModel;
         

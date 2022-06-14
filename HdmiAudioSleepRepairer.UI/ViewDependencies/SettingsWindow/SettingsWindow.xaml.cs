@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace HdmiAudioSleepRepairer.UI.Views;
+namespace HdmiAudioSleepRepairer.UI.ViewDependencies.SettingsWindow;
 
 /// <summary>
 /// Window to display settings and allow user to change settings
@@ -8,7 +8,7 @@ namespace HdmiAudioSleepRepairer.UI.Views;
 public partial class SettingsWindow : Window
 {
     /// <summary>
-    /// Constructor
+    /// Constructor with no injection
     /// </summary>
     public SettingsWindow()
     {

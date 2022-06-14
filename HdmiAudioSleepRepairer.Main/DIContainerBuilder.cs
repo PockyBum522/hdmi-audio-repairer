@@ -5,8 +5,9 @@ using HdmiAudioSleepRepairer.Core;
 using HdmiAudioSleepRepairer.Core.Interfaces;
 using HdmiAudioSleepRepairer.Main.Logic;
 using HdmiAudioSleepRepairer.UI.Interfaces;
-using HdmiAudioSleepRepairer.UI.ViewModels;
-using HdmiAudioSleepRepairer.UI.Views;
+using HdmiAudioSleepRepairer.UI.ViewDependencies;
+using HdmiAudioSleepRepairer.UI.ViewDependencies.SettingsWindow;
+using HdmiAudioSleepRepairer.UI.ViewDependencies.TrayIcon;
 using Serilog;
 
 namespace HdmiAudioSleepRepairer.Main;

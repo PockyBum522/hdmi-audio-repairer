@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace HdmiAudioSleepRepairer.UI.Commands
+namespace HdmiAudioSleepRepairer.UI.ViewDependencies.ViewModelHelpers.Commands
 {
     /// <summary>
     /// Command for MVVM that takes in a parameter from the UI

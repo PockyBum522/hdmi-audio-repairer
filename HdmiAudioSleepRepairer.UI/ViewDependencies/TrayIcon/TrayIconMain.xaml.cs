@@ -1,6 +1,6 @@
 using HdmiAudioSleepRepairer.UI.Interfaces;
 
-namespace HdmiAudioSleepRepairer.UI.Views;
+namespace HdmiAudioSleepRepairer.UI.ViewDependencies.TrayIcon;
 
 /// <summary>
 /// TrayIconMain class for setting up  
