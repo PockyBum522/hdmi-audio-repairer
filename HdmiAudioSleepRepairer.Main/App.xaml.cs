@@ -12,6 +12,10 @@ namespace HdmiAudioSleepRepairer.Main
     {
         private readonly DIContainerBuilder _mainBuilder = new ();
         
+        /// <summary>
+        /// Sets up application, app exception handling, and Tray Icon
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnStartup(StartupEventArgs e)
         {
             var container = _mainBuilder.GetBuiltContainer();

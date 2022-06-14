@@ -10,6 +10,9 @@
         <ApplicationIcon>Resources/Icons/AppIcon.ico</ApplicationIcon>
         <Nullable>enable</Nullable>
         <ApplicationManifest>app.manifest</ApplicationManifest>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <WarningLevel>9999</WarningLevel>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">

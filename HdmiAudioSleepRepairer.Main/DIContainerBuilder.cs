@@ -11,12 +11,19 @@ using Serilog;
 
 namespace HdmiAudioSleepRepairer.Main;
 
+/// <summary>
+/// Contains methods for building a dependency injection container with all necessary dependencies to run application
+/// </summary>
 public class DIContainerBuilder
 {
     private readonly ContainerBuilder _builder = new ();
     private ILogger? _logger;
     private ISettingsApplicationLocal? _settingsApplicationLocal;
 
+    /// <summary>
+    /// Builds a dependency injection container with all necessary dependencies to run application
+    /// </summary>
+    /// <returns>Dependency injection container with all necessary dependencies to run application</returns>
     public IContainer GetBuiltContainer()
     {
         RegisterLogger();
