@@ -6,6 +6,9 @@
         <Configurations>Debug;Release;Local Debug Test</Configurations>
         <Platforms>x64</Platforms>
         <Nullable>enable</Nullable>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <WarningLevel>9999</WarningLevel>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     </PropertyGroup>
 
     <ItemGroup>

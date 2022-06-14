@@ -10,20 +10,37 @@ using Ookii.Dialogs.Wpf;
 
 namespace HdmiAudioSleepRepairer.UI.ViewModels;
 
+/// <summary>
+/// ViewModel for settings window
+/// </summary>
 [PublicAPI]
 public class SettingsViewModel : BaseViewModel
 {
-    // Bound in UI
+    /// <summary>
+    /// Bound for getting/showing the stored device instance path
+    /// </summary>
     public string DeviceInstancePath { get; set; } = "";
+    /// <summary>
+    /// Bound for getting/showing the stored device's class GUID
+    /// </summary>
     public string DeviceClassGuid { get; set; } = "";
 
-    // Commands
+    /// <summary>
+    /// Command to save settings and hide settings window
+    /// </summary>
     public ICommand CommandSaveSettings => new ParameterCommand(SaveAndHideSettingsWindow);
+    /// <summary>
+    /// Command to NOT SAVE settings and hide settings window
+    /// </summary>
     public ICommand CommandCancel => new ParameterCommand(CancelAndHideSettingsWindow);
     
     // Private
     private readonly ISettingsApplicationLocal _settingsAppLocal;
     
+    /// <summary>
+    /// Constructor for dependency injection and checking that settings are initiliazed
+    /// </summary>
+    /// <param name="settingsAppLocal">Injected application local settings to use</param>
     public SettingsViewModel(ISettingsApplicationLocal settingsAppLocal)
     {
         _settingsAppLocal = settingsAppLocal;

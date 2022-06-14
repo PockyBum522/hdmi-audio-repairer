@@ -16,6 +16,9 @@ using Serilog;
 
 namespace HdmiAudioSleepRepairer.UI.ViewModels;
 
+/// <summary>
+/// ViewModel for Tray Icon
+/// </summary>
 public class TrayIconViewModel : BaseViewModel, ITrayIconViewModel
 {
     private readonly ILogger _logger;
@@ -23,6 +26,12 @@ public class TrayIconViewModel : BaseViewModel, ITrayIconViewModel
     
     private readonly SettingsWindow _settingsWindow;
     
+    /// <summary>
+    /// Constructor for dependency injection
+    /// </summary>
+    /// <param name="logger">Injected logger to use</param>
+    /// <param name="settingsViewModel">Injected settings window viewmodel to use</param>
+    /// <param name="settingsAppLocal">Injected application local settings to use</param>
     public TrayIconViewModel(ILogger logger, SettingsViewModel settingsViewModel, ISettingsApplicationLocal settingsAppLocal)
     {
         _logger = logger;
@@ -40,12 +49,30 @@ public class TrayIconViewModel : BaseViewModel, ITrayIconViewModel
         _logger.Information("Hid settings window, tray icon init finished");
     }
     
+    /// <summary>
+    /// Command to exit the application completely
+    /// </summary>
     public ICommand CommandExitApplication => new SimpleCommand(() => Environment.Exit(0));
+    /// <summary>
+    /// Command to show the settings window
+    /// </summary>
     public ICommand CommandOpenSettingsWindow => new SimpleCommand(() => _settingsWindow.Show());
+    /// <summary>
+    /// Command to open the log file in VSCode
+    /// </summary>
     public ICommand CommandOpenLogFile => new SimpleCommand(RunLogfileInVscode);
+    /// <summary>
+    /// Command to enable the hardware device manually
+    /// </summary>
     public ICommand CommandEnableDevice => new SimpleCommand(EnableDevice);
+    /// <summary>
+    /// Command to disable the hardware device manually
+    /// </summary>
     public ICommand CommandDisableDevice => new SimpleCommand(DisableDevice);
     
+    /// <summary>
+    /// Command to disable then enable the hardware device manually
+    /// </summary>
     // ReSharper disable once AsyncVoidLambda because resharper doesn't know what it's talking about
     public ICommand CommandRestartDevice => new SimpleCommand(async () => await RestartDevice());
 
