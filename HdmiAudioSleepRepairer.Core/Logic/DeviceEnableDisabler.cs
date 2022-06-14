@@ -245,6 +245,9 @@ internal class SafeDeviceInfoSetHandle : SafeHandleZeroOrMinusOneIsInvalid
 
 }
 
+/// <summary>
+/// Contains methods for enabling or disabling a hardware device in Windows
+/// </summary>
 public sealed class DeviceHelper
 {
 

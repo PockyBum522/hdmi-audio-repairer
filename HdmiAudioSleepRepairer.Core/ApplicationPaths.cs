@@ -1,7 +1,13 @@
 ﻿namespace HdmiAudioSleepRepairer.Core;
 
+/// <summary>
+/// Stores central paths related to the application itself, such as settings storage paths and logging paths
+/// </summary>
 public static class ApplicationPaths
 {
+    /// <summary>
+    /// Full path to the directory the app is running from, used for building log and settings directories
+    /// </summary>
     public static string GetAppRoot()
     {
         try
@@ -14,18 +20,27 @@ public static class ApplicationPaths
         }
     }
     
+    /// <summary>
+    /// Full path to the app's local settings INI file
+    /// </summary>
     public static string PathSettingsApplicationLocalIniFile =>
         Path.Combine(
             GetAppRoot(), 
             "Settings", 
             "settings.ini");
     
+    /// <summary>
+    /// Full path to base folder for logs (the folder, not the log files themselves)
+    /// </summary>
     public static string LogAppBasePath =>
         Path.Combine(
             GetAppRoot(), 
             "Logs", 
             Environment.UserName);
     
+    /// <summary>
+    /// Full path to a generic log filename, for Serilog
+    /// </summary>
     public static string LogPath => 
         Path.Combine(
             LogAppBasePath,
